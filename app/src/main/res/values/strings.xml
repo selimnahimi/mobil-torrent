@@ -51,16 +51,10 @@
     </array>
 
     <array name="shopping_item_images">
-        <item>@drawable/smart_phone</item>
-        <item>@drawable/tablet</item>
-        <item>@drawable/pc</item>
-        <item>@drawable/oled_tv</item>
-        <item>@drawable/bike</item>
-        <item>@drawable/lego</item>
-        <item>@drawable/custome</item>
-        <item>@drawable/sport_tools</item>
-        <item>@drawable/kitchen</item>
-        <item>@drawable/furniture</item>
+        <item>@drawable/matrix</item>
+        <item>@drawable/shrek</item>
+        <item>@drawable/hl2</item>
+        <item>@drawable/pride_and_prejudice</item>
     </array>
 
     <array name="torrent_item_size">
