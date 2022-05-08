@@ -22,13 +22,9 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     private static final String PREF_KEY = RegisterActivity.class.getPackage().toString();
     private static final int SECRET_KEY = 99;
 
-    EditText userNameEditText;
     EditText userEmailEditText;
     EditText passwordEditText;
     EditText passwordConfirmEditText;
-    EditText phoneEditText;
-    Spinner spinner;
-    RadioGroup accountTypeGroup;
 
     private SharedPreferences preferences;
     private FirebaseAuth mAuth;
@@ -46,28 +42,16 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             finish();
         }
 
-        userNameEditText = findViewById(R.id.userNameEditText);
         userEmailEditText = findViewById(R.id.userEmailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         passwordConfirmEditText = findViewById(R.id.passwordAgainEditText);
-        phoneEditText = findViewById(R.id.phoneEditText);
-        spinner = findViewById(R.id.phoneSpinner);
-        accountTypeGroup = findViewById(R.id.accountTypeGroup);
-        accountTypeGroup.check(R.id.buyer);
 
         preferences = getSharedPreferences(PREF_KEY, MODE_PRIVATE);
         String email = preferences.getString("email", "");
         String password = preferences.getString("password", "");
 
-        userNameEditText.setText(email);
         passwordEditText.setText(password);
         passwordConfirmEditText.setText(password);
-
-        spinner.setOnItemSelectedListener(this);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.phone_labels, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -75,7 +59,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     }
 
     public void register(View view) {
-        String userName = userNameEditText.getText().toString();
         String email = userEmailEditText.getText().toString();
         String password = passwordEditText.getText().toString();
         String passwordConfirm = passwordConfirmEditText.getText().toString();
@@ -85,15 +68,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             return;
         }
 
-        String phone = phoneEditText.getText().toString();
-        String phoneType = spinner.getSelectedItem().toString();
-
-        int accountTypeId = accountTypeGroup.getCheckedRadioButtonId();
-        View radioButton = accountTypeGroup.findViewById(accountTypeId);
-        int id = accountTypeGroup.indexOfChild(radioButton);
-        String accountType =  ((RadioButton)accountTypeGroup.getChildAt(id)).getText().toString();
-
-        Log.i(LOG_TAG, "Regisztrált: " + userName + ", e-mail: " + email);
+        Log.i(LOG_TAG, "Regisztrált: " + email);
         // startShopping();
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
@@ -102,7 +77,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 startShopping();
             } else {
                 Log.d(LOG_TAG, "User wasn't created successfully");
-                Toast.makeText(RegisterActivity.this, "User was't created successfully: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this, "User wasn't created successfully: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
