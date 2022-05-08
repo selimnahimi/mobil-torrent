@@ -265,6 +265,18 @@ public class TorrentListActivity extends AppCompatActivity {
         return super.onPrepareOptionsMenu(menu);
     }
 
+    public void deductDownload() {
+        downloadingItems = (downloadingItems - 1);
+
+        if (0 < downloadingItems) {
+            countTextView.setText(String.valueOf(downloadingItems));
+        } else {
+            countTextView.setText("");
+        }
+
+        redCircle.setVisibility((downloadingItems > 0) ? VISIBLE : GONE);
+    }
+
     public void updateAlertIcon(TorrentItem item) {
         downloadingItems = (downloadingItems + 1);
         if (0 < downloadingItems) {
@@ -280,7 +292,10 @@ public class TorrentListActivity extends AppCompatActivity {
                 Toast.makeText(this, "Item " + item._getId() + " cannot be changed.", Toast.LENGTH_LONG).show();
             });
 
-        mNotificationHelper.send(item.getName());
+        mNotificationHelper.send("[ " + item.getName() + "] Download started");
+        DownloadAsyncTask downloadAsyncTask = new DownloadAsyncTask(this, item.getName());
+        downloadAsyncTask.execute();
+
         queryData();
     }
 
