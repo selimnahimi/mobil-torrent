@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">Mobil Torrent</string>
+    <string name="name">Név</string>
+    <string name="password">Jelszó</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="registration">Regisztráció</string>
+    <string name="user_name">Felhasználónév</string>
+    <string name="email_address">E-mail cím</string>
+    <string name="password_again">Jelszó megerősítése</string>
+    <string name="cancel">Mégse</string>
+    <string name="phone_number">Telefonszám</string>
+    <string name="address">Cím</string>
+    <string name="account_type">Fiók típusa</string>
+    <string name="customer">Vásárló</string>
+    <string name="seller">Eladó</string>
+    <string name="product_description">Termék leírása.</string>
+
+    <string name="title_placeholder">Title</string>
+    <string name="item_placeholder">Leírás</string>
+    <string name="item_info_placeholder">Here is some news</string>
+    <string name="subtitle_detail_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices congue rutrum. Phasellus elementum ipsum ac convallis aliquam. Suspendisse eleifend eros a enim faucibus mollis. Nunc placerat, est vitae vestibulum blandit, dolor diam fringilla tellus, eu euismod mauris neque at neque.</string>
+    <string name="download">Letöltés</string>
+    <string name="delete">Törlés</string>
+
+    <string-array name="phone_labels">
+        <item>Otthon</item>
+        <item>Munkahely</item>
+        <item>Mobil</item>
+        <item>Egyéb</item>
+    </string-array>
+
+    <string-array name="torrent_item_names">
+        <item>The.Matrix.1999</item>
+        <item>Shrek.2001</item>
+        <item>Half-Life.2.2004</item>
+        <item>Pride.And.Prejudice</item>
+    </string-array>
+
+    <string-array name="torrent_item_desc">
+        <item>A Mátrix film egy kult klasszik.</item>
+        <item>A Shrek film egy kult klasszik.</item>
+        <item>A Half-Life 2 széria egy mindenki által ismert klasszikus.</item>
+        <item>A Büszkeség és Balítélet egy közkedvelt könyv.</item>
+    </string-array>
+
+    <array name="shopping_item_rates">
+        <item>3.5</item>
+        <item>5</item>
+        <item>4</item>
+        <item>5</item>
+    </array>
+
+    <array name="shopping_item_images">
+        <item>@drawable/smart_phone</item>
+        <item>@drawable/tablet</item>
+        <item>@drawable/pc</item>
+        <item>@drawable/oled_tv</item>
+        <item>@drawable/bike</item>
+        <item>@drawable/lego</item>
+        <item>@drawable/custome</item>
+        <item>@drawable/sport_tools</item>
+        <item>@drawable/kitchen</item>
+        <item>@drawable/furniture</item>
+    </array>
+
+    <array name="torrent_item_size">
+        <item>2.1 GB</item>
+        <item>1.4 GB</item>
+        <item>4.7 GB</item>
+        <item>317 Kb</item>
+    </array>
+</resources>
