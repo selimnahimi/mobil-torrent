@@ -1,57 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextPassword"
+    <ImageView
+        android:id="@+id/imageView6"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:layout_marginTop="10dp"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="@string/email_address"
-        android:inputType="text" />
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:alpha="0.5"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.500">
+        android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/loginButton"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="login"
-            app:srcCompat="@drawable/ic_baseline_login_24" />
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/email_address"
+            android:inputType="text" />
 
-        <ImageButton
-            android:id="@+id/registerButton"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="register"
-            app:srcCompat="@drawable/ic_baseline_person_add_24" />
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/loginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="login"
+                app:srcCompat="@drawable/ic_baseline_login_24" />
+
+            <ImageButton
+                android:id="@+id/registerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="register"
+                app:srcCompat="@drawable/ic_baseline_person_add_24" />
+        </LinearLayout>
+
     </LinearLayout>
-</LinearLayout>
+
+</FrameLayout>
