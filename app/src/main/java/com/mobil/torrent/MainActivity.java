@@ -5,6 +5,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -29,6 +32,7 @@ public class MainActivity
 
     EditText emailET;
     EditText passwordET;
+    Button loginButton;
 
     private SharedPreferences preferences;
     private FirebaseAuth mAuth;
@@ -41,6 +45,7 @@ public class MainActivity
 
         emailET = findViewById(R.id.editTextEmail);
         passwordET = findViewById(R.id.editTextPassword);
+        loginButton = findViewById(R.id.loginButton);
 
         preferences = getSharedPreferences(PREF_KEY, MODE_PRIVATE);
         mAuth = FirebaseAuth.getInstance();
@@ -90,16 +95,20 @@ public class MainActivity
     public void login(View view) {
         String email = emailET.getText().toString();
         String password = passwordET.getText().toString();
-
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
-            if(task.isSuccessful()){
-                Log.d(LOG_TAG, "User logged in successfully");
-                startShopping();
-            } else {
-                Log.d(LOG_TAG, "User login fail");
-                Toast.makeText(MainActivity.this, "Login fail: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
+        try {
+            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
+                if (task.isSuccessful()) {
+                    Log.d(LOG_TAG, "User logged in successfully");
+                    startShopping();
+                } else {
+                    Log.d(LOG_TAG, "User login fail");
+                    Toast.makeText(MainActivity.this, "Login fail: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                }
+            });
+        } catch (Exception e) {
+            Animation animation = AnimationUtils.loadAnimation(this, R.anim.shake);
+            loginButton.startAnimation(animation);
+        }
     }
 
     private void startShopping() {
