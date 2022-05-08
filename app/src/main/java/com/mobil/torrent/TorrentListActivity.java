@@ -170,12 +170,6 @@ public class TorrentListActivity extends AppCompatActivity {
                 item.setId(document.getId());
                 mItemsData.add(item);
                 Log.d(LOG_TAG, item.getName());
-                Log.d(LOG_TAG, item.getName());
-                Log.d(LOG_TAG, item.getName());
-                Log.d(LOG_TAG, item.getName());
-                Log.d(LOG_TAG, item.getName());
-                Log.d(LOG_TAG, item.getName());
-                Log.d(LOG_TAG, item.getName());
             }
 
             if (mItemsData.size() == 0) {
@@ -229,11 +223,6 @@ public class TorrentListActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.log_out_button:
                 Log.d(LOG_TAG, "Logout clicked!");
-                FirebaseAuth.getInstance().signOut();
-                finish();
-                return true;
-            case R.id.settings_button:
-                Log.d(LOG_TAG, "Setting clicked!");
                 FirebaseAuth.getInstance().signOut();
                 finish();
                 return true;

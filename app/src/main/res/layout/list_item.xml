@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp">
@@ -82,19 +83,19 @@
             android:layout_below="@id/statContainer"
             android:layout_centerHorizontal="true">
 
-            <Button
+            <ImageButton
                 android:id="@+id/add_to_cart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="@string/download" />
+                app:srcCompat="@drawable/ic_baseline_arrow_downward_24" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/delete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="@string/delete" />
+                app:srcCompat="@drawable/ic_baseline_delete_forever_24" />
         </LinearLayout>
 
 
