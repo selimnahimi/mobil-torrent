@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "938428013282",
+    "project_id": "mobil-torrent",
+    "storage_bucket": "mobil-torrent.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938428013282:android:4b2dd746ed41f0c4f09cbb",
+        "android_client_info": {
+          "package_name": "com.mobil.torrent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938428013282-g1ud1cr0tvt0vs0rmnqnoi0ponpu9tot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDraYzBv3VxTf_4WWQgovfxLWA3fkRl8w4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938428013282-g1ud1cr0tvt0vs0rmnqnoi0ponpu9tot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
