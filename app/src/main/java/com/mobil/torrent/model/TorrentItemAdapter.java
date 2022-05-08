@@ -106,7 +106,8 @@ public class TorrentItemAdapter
         // Member Variables for the TextViews
         private TextView mTitleText;
         private TextView mInfoText;
-        private TextView mPriceText;
+        private TextView mSizeText;
+        private TextView mDownloadsText;
         private ImageView mItemImage;
         private RatingBar mRatingBar;
 
@@ -118,13 +119,15 @@ public class TorrentItemAdapter
             mInfoText = itemView.findViewById(R.id.subTitle);
             mItemImage = itemView.findViewById(R.id.itemImage);
             mRatingBar = itemView.findViewById(R.id.ratingBar);
-            mPriceText = itemView.findViewById(R.id.price);
+            mSizeText = itemView.findViewById(R.id.size);
+            mDownloadsText = itemView.findViewById(R.id.downloads);
         }
 
         void bindTo(TorrentItem currentItem){
             mTitleText.setText(currentItem.getName());
             mInfoText.setText(currentItem.getInfo());
-            mPriceText.setText(currentItem.getSize());
+            mSizeText.setText(currentItem.getSize());
+            mDownloadsText.setText(String.valueOf(currentItem.getDownloadCount() + " letöltés"));
             mRatingBar.setRating(currentItem.getRatedInfo());
 
             // Load the images into the ImageView using the Glide library.

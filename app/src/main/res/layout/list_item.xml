@@ -42,21 +42,44 @@
             android:padding="8dp"
             android:text="@string/item_info_placeholder" />
 
-        <TextView
-            android:id="@+id/price"
-            style="@style/ItemDetailText"
+        <LinearLayout
+            android:id="@+id/statContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/subTitle"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="12dp"
-            android:padding="8dp"
-            android:textColor="@color/red" />
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/size"
+                style="@style/ItemDetailText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:padding="8dp"
+                android:textColor="@color/red" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="  -  " />
+
+            <TextView
+                android:id="@+id/downloads"
+                style="@style/ItemDetailText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:textColor="@color/teal_700" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/price"
+            android:layout_below="@id/statContainer"
             android:layout_centerHorizontal="true">
 
             <Button

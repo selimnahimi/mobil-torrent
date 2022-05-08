@@ -34,6 +34,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.mobil.torrent.model.TorrentItem;
 import com.mobil.torrent.model.TorrentItemAdapter;
@@ -92,14 +93,6 @@ public class TorrentListActivity extends AppCompatActivity {
         // Initialize the adapter and set it to the RecyclerView.
         mAdapter = new TorrentItemAdapter(this, mItemsData);
         mRecyclerView.setAdapter(mAdapter);
-
-        Log.d(LOG_TAG, "ARE THERE ANY TORRENTS AROUND HERE???????????????");
-        Log.d(LOG_TAG, "ARE THERE ANY TORRENTS AROUND HERE???????????????");
-        Log.d(LOG_TAG, "ARE THERE ANY TORRENTS AROUND HERE???????????????");
-        Log.d(LOG_TAG, "ARE THERE ANY TORRENTS AROUND HERE???????????????");
-        Log.d(LOG_TAG, "ARE THERE ANY TORRENTS AROUND HERE???????????????");
-        Log.d(LOG_TAG, "ARE THERE ANY TORRENTS AROUND HERE???????????????");
-        Log.d(LOG_TAG, "ARE THERE ANY TORRENTS AROUND HERE???????????????");
 
         mFirestore = FirebaseFirestore.getInstance();
         Log.d(LOG_TAG, "getting firebase instance");
@@ -169,7 +162,7 @@ public class TorrentListActivity extends AppCompatActivity {
 
     private void queryData() {
         mItemsData.clear();
-        mItems.limit(itemLimit).get()
+        mItems.orderBy("downloadCount", Query.Direction.DESCENDING).limit(itemLimit).get()
               .addOnSuccessListener(queryDocumentSnapshots -> {
             for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
                 Log.d(LOG_TAG, "NEW TORRENT!!!!!!!!!!!!!!!");
